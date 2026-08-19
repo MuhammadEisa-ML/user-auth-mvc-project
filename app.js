@@ -2,6 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const session = require("express-session");
+const MongoStore = require("connect-mongo");
 const path = require("path");
 
 const connectDB = require("./config/db");
@@ -29,11 +30,14 @@ app.use(
     secret: process.env.SESSION_SECRET || "development-secret-2026",
     resave: false,
     saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_URI
+    }),
     cookie: {
       httpOnly: true,
       maxAge: 1000 * 60 * 60 * 2,
       sameSite: "lax",
-      secure: false
+      secure: process.env.NODE_ENV === "production"
     }
   })
 );
@@ -69,6 +73,11 @@ app.use((err, req, res, next) => {
 // Start server
 const PORT = process.env.PORT || 3000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+// Export the app for Vercel Serverless Functions
+module.exports = app;
