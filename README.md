@@ -84,15 +84,4 @@ The application includes `vercel.json` for Vercel deployment. Import the GitHub 
 
 After deployment, test register, login, dashboard, profile and logout.
 
-## 7. Demonstration video
-Show:
-1. Home page
-2. Register a new user
-3. Explain that password is hashed in MongoDB
-4. Login
-5. Dashboard
-6. Profile
-7. Try `/dashboard` after logout and show redirect
-8. Logout
-9. Briefly explain MVC and middleware
 
