@@ -23,37 +23,11 @@ Install:
 - Git/GitHub account
 - Vercel account
 
-## 2. Setup
 
-```bash
-npm install
-```
 
-Copy `.env.example` to `.env` and fill in:
 
-```env
-PORT=3000
-MONGODB_URI=your_mongodb_connection_string
-SESSION_SECRET=your_long_random_secret
-```
 
-Run:
-
-```bash
-npm start
-```
-
-Open:
-
-http://localhost:3000
-
-For development:
-
-```bash
-npm run dev
-```
-
-## 3. MongoDB Atlas
+## 2. MongoDB Atlas
 1. Create a free MongoDB Atlas cluster.
 2. Create a database user.
 3. In Network Access, allow your development IP. For a simple student deployment, you may temporarily allow `0.0.0.0/0`, but use a strong database password and restrict access when possible.
@@ -62,7 +36,7 @@ npm run dev
 
 Do NOT commit `.env`.
 
-## 4. MVC Flow
+## 3. MVC Flow
 
 Browser
   -> Route
@@ -76,7 +50,7 @@ Examples:
 - POST `/login` -> login controller -> User model -> bcrypt verification -> session
 - GET `/dashboard` -> requireAuth middleware -> dashboard controller -> EJS view
 
-## 5. Main Routes
+## 4. Main Routes
 
 | Method | Route | Purpose |
 |---|---|---|
@@ -89,7 +63,7 @@ Examples:
 | GET | `/profile` | Protected profile |
 | POST | `/logout` | Logout |
 
-## 6. GitHub
+## 5. GitHub
 
 ```bash
 git init
@@ -100,7 +74,7 @@ git remote add origin YOUR_GITHUB_REPOSITORY_URL
 git push -u origin main
 ```
 
-## 7. Vercel
+## 6. Vercel
 
 The application includes `vercel.json` for Vercel deployment. Import the GitHub repository into Vercel and add the same environment variables:
 
@@ -110,7 +84,7 @@ The application includes `vercel.json` for Vercel deployment. Import the GitHub 
 
 After deployment, test register, login, dashboard, profile and logout.
 
-## 8. Demonstration video
+## 7. Demonstration video
 Show:
 1. Home page
 2. Register a new user
@@ -122,15 +96,3 @@ Show:
 8. Logout
 9. Briefly explain MVC and middleware
 
-## 9. Report
-Include screenshots of:
-- Home
-- Register
-- Login
-- Dashboard
-- Profile
-- MongoDB user document (do not expose a real password)
-- GitHub repository
-- Vercel deployed site
-
-Also include a short architecture explanation and testing results.
