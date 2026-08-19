@@ -12,6 +12,9 @@ const pageRoutes = require("./routes/pageRoutes");
 
 const app = express();
 
+// Trust Vercel's proxy so secure cookies work properly
+app.set("trust proxy", 1);
+
 // Connect to MongoDB
 connectDB();
 
