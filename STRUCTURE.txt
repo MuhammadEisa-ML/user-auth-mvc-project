@@ -1,0 +1,35 @@
+user-auth-mvc-project/
+├── app.js
+├── package.json
+├── vercel.json
+├── .env.example
+├── .gitignore
+├── README.md
+├── REPORT_GUIDE.md
+├── STRUCTURE.txt
+├── config/
+│   └── db.js
+├── controllers/
+│   ├── authController.js
+│   └── pageController.js
+├── middleware/
+│   └── authMiddleware.js
+├── models/
+│   └── User.js
+├── routes/
+│   ├── authRoutes.js
+│   └── pageRoutes.js
+├── public/
+│   └── css/
+│       └── style.css
+└── views/
+    ├── 404.ejs
+    ├── dashboard.ejs
+    ├── error.ejs
+    ├── home.ejs
+    ├── login.ejs
+    ├── profile.ejs
+    ├── register.ejs
+    └── partials/
+        ├── header.ejs
+        └── footer.ejs

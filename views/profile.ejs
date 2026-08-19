@@ -1,0 +1,17 @@
+<%- include("partials/header", { title }) %>
+
+<section class="page-card">
+  <p class="eyebrow">Protected Route</p>
+  <h1>My Profile</h1>
+
+  <div class="profile">
+    <div class="avatar"><%= user.name.charAt(0).toUpperCase() %></div>
+    <div>
+      <h2><%= user.name %></h2>
+      <p><%= user.email %></p>
+      <p class="muted">Member since <%= user.createdAt.toLocaleDateString() %></p>
+    </div>
+  </div>
+</section>
+
+<%- include("partials/footer") %>

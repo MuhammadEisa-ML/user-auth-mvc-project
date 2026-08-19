@@ -1,0 +1,16 @@
+<%- include("partials/header", { title }) %>
+
+<section class="page-card">
+  <p class="eyebrow">Protected Route</p>
+  <h1>Welcome, <%= currentUser.name %>!</h1>
+  <p>You are authenticated. This dashboard is protected by custom authentication middleware.</p>
+
+  <div class="info-grid">
+    <div><strong>Name</strong><span><%= currentUser.name %></span></div>
+    <div><strong>Email</strong><span><%= currentUser.email %></span></div>
+  </div>
+
+  <a class="button" href="/profile">View Profile</a>
+</section>
+
+<%- include("partials/footer") %>

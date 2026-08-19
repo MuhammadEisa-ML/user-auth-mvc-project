@@ -1,0 +1,24 @@
+<%- include("partials/header", { title }) %>
+
+<section class="hero">
+  <p class="eyebrow">Node.js • Express • MongoDB • EJS</p>
+  <h1>User Authentication Web Application</h1>
+  <p>A simple MVC application with registration, secure login, protected pages, profile and logout.</p>
+
+  <% if (currentUser) { %>
+    <a class="button" href="/dashboard">Open Dashboard</a>
+  <% } else { %>
+    <div class="actions">
+      <a class="button" href="/register">Create Account</a>
+      <a class="button secondary" href="/login">Login</a>
+    </div>
+  <% } %>
+</section>
+
+<section class="cards">
+  <article><h3>Secure Passwords</h3><p>Passwords are hashed with bcrypt before storage.</p></article>
+  <article><h3>Protected Routes</h3><p>Dashboard and profile require authentication middleware.</p></article>
+  <article><h3>MVC Design</h3><p>Models, views, controllers, routes and middleware are separated.</p></article>
+</section>
+
+<%- include("partials/footer") %>
