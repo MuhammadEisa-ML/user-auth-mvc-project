@@ -91,7 +91,10 @@ async function login(req, res, next) {
       email: user.email
     };
 
-    res.redirect("/dashboard");
+    req.session.save((err) => {
+      if (err) return next(err);
+      res.redirect("/dashboard");
+    });
   } catch (error) {
     next(error);
   }
